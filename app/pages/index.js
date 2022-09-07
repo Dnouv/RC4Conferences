@@ -8,6 +8,7 @@ import Growthcounters from '../components/growthcounters';
 import { Container, Col } from 'react-bootstrap';
 import { fetchAPI } from '../lib/api';
 import { INFOTILES_DATA } from '../lib/const/infotiles';
+import bgWeb3 from "../assets/bg_web3.avif"
 
 function Home(props) {
   return (
@@ -20,23 +21,25 @@ function Home(props) {
 
       <Container
         fluid
+        style={{background: `url(${bgWeb3.src})`, backgroundSize: "repeat"}}
         className='d-flex flex-column align-items-center gap-3 gap-md-5'
       >
         <Col className='d-flex flex-column align-items-center gap-2 py-5 mt-2'>
           <h1
+          
             className={`display-4 fw-bold text-center ${styles.hero_heading}`}
           >
-            Welcome to our <span className={styles.redText}>community</span>
+            Welcome to <span className={styles.redText}>Dew</span>
           </h1>
           <p
             className={`fw-regular col-10 col-md-8 text-center ${styles.hero_subheading}`}
           >
             Let's dream, share, and collaborate in shaping the future of the
-            Rocket.Chat ecosystem together
+            Decentralized ecosystem together
           </p>
         </Col>
         <Col className='mb-5 d-flex flex-column align-items-center'>
-          <h6 className='py-2 fs-6'> <a href={props?.guides?.data?.location} target="_blank">Read the Guides</a>  | <a href={props?.releaseNotes?.data?.location} target="_blank">Read Release Notes</a> </h6>
+          {/* <h6 className='py-2 fs-6'> <a href={props?.guides?.data?.location} target="_blank">Read the Guides</a>  | <a href={props?.releaseNotes?.data?.location} target="_blank">Read Release Notes</a> </h6> */}
           <Searchbox></Searchbox>
         </Col>
         <Col>

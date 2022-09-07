@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, Nav, NavDropdown, Container, Dropdown } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container, Dropdown, NavLink } from "react-bootstrap";
 import styles from "../styles/Menubar.module.css";
 import { RocketChatAuthMenuButton } from "./auth/rocketchat";
 import BrandLogo from "./brandlogo";
@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import Link from "next/link";
 import { DummyLoginButton } from "./auth/dummy";
 import RCGoogleLoginButton from "./auth/goauth/ui/GoogleRCLogin";
+import web3 from "../assets/web3-icon.png"
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   <a
@@ -40,12 +41,12 @@ export default function Menubar(props) {
         <Navbar.Brand>
         <BrandLogo
           logoLink={
-            "https://global-uploads.webflow.com/611a19b9853b7414a0f6b3f6/611bbb87319adfd903b90f24_logoRC.svg"
+            web3
           }
           imageTitle={"Rocket.Chat"}
           brandName={"Rocket.Chat Community"}
-          height={21}
-          width={124}
+          height={31}
+          width={31}
         />
         </Navbar.Brand>
         <Navbar.Toggle
@@ -95,11 +96,32 @@ export default function Menubar(props) {
                 </Nav.Link>
               );
             })}
+            <NavDropdown title="NFTs" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action5">
+                Something else here
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Parachains" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action5">
+                Something else here
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavLink>Learn More</NavLink>
           </Nav>
           <RocketChatLinkButton
-            className={`bg-danger bg-gradient p-2 text-white ${styles.chat}`}
+            className={`bg-warning bg-gradient p-2 text-white ${styles.chat}`}
           >
-            Click to Chat
+            Connect MetaMask
           </RocketChatLinkButton>
         </Navbar.Collapse>
         <div className="mx-3">
