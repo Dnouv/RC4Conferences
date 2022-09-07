@@ -21,12 +21,12 @@ function Home(props) {
 
       <Container
         fluid
-        style={{background: `url(${bgWeb3.src})`, backgroundSize: "repeat"}}
+        style={{background: `url(${bgWeb3.src})`, backgroundSize: "contain"}}
         className='d-flex flex-column align-items-center gap-3 gap-md-5'
       >
         <Col className='d-flex flex-column align-items-center gap-2 py-5 mt-2'>
           <h1
-          
+
             className={`display-4 fw-bold text-center ${styles.hero_heading}`}
           >
             Welcome to <span className={styles.redText}>Dew</span>
