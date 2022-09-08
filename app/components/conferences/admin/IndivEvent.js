@@ -218,6 +218,16 @@ const SpeakerModal = (props) => {
             />
           </Form.Group>
           <Form.Group className="mb-3">
+            <Form.Label>Position</Form.Label>
+            <Form.Control
+              required
+              onChange={handleChange}
+              type="text"
+              name="position"
+              placeholder="What sponsor?"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
             <Form.Label>Profile Pic URL</Form.Label>
             <Form.Control
               type="url"

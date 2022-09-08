@@ -60,7 +60,7 @@ export const EventShow = ({ event, error, speaker, prsession }) => {
               setToOpen={setToOpen}
             />
           </Tab>
-          <Tab eventKey="speakers" title="Speakers">
+          <Tab eventKey="speakers" title="Sponsors">
             {key == "speakers" &&
               (isSmallScreen ? (
                 <SmEventSpeaker
