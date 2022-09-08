@@ -106,9 +106,11 @@ const InNav = ({ brand, price, handleJoin, containerRef }) => {
           </Badge>
         </Navbar.Brand>
         <Nav className="me-auto"></Nav>
-        <Link href={"https://bbb.rocket.chat/b/deb-ped-v5x-mp5"}>
+        {/* <Link href={"https://bbb.rocket.chat/b/deb-ped-v5x-mp5"}>
         <Button>Join</Button>
-        </Link>
+        </Link> */}
+                <Button onClick={handleJoin}>Join</Button>
+
       </Container>
     </Navbar>
   );
@@ -125,10 +127,10 @@ const TopNav = ({ brand, price, handleJoin }) => {
           </Badge>
         </Navbar.Brand>
         <Nav className="me-auto"></Nav>
-        <Link href={"https://bbb.rocket.chat/b/deb-ped-v5x-mp5"}>
+        {/* <Link href={"https://bbb.rocket.chat/b/deb-ped-v5x-mp5"}>
         <Button>Join</Button>
-        </Link>
-        {/* <Button onClick={handleJoin}>Join</Button> */}
+        </Link> */}
+        <Button onClick={handleJoin}>Join</Button>
       </Container>
     </Navbar>
   );

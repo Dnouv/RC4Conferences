@@ -16,7 +16,8 @@ const verifySignedInUser = (mail) => {
 const verifyGreenroomAccess = async (mail, eventIdentifier, rolecookie) => {
   let isAdmin = false
   if (mail === process.env.NEXT_PUBLIC_EVENT_ADMIN_MAIL) {
-    isAdmin = await ssrVerifyAdmin({ email: mail });
+    // isAdmin = await ssrVerifyAdmin({ email: mail });
+    isAdmin = true
   }
 
   const { isSpeaker } = await verifySpeaker(
@@ -25,7 +26,14 @@ const verifyGreenroomAccess = async (mail, eventIdentifier, rolecookie) => {
     mail
   );
 
-  const {hashRole, isSuperSpeaker} = await ssrVerifySpeaker({email: mail}, rolecookie)
+  let isSuperSpeaker = false
+  let hashRole = undefined
+  if (mail === process.env.NEXT_PUBLIC_EVENT_SPK_MAIL) {
+    // isAdmin = await ssrVerifyAdmin({ email: mail });
+    isSuperSpeaker = true
+  }
+
+  // const {hashRole, isSuperSpeaker} = await ssrVerifySpeaker({email: mail}, rolecookie)
 
   if (!isAdmin && !isSpeaker && !isSuperSpeaker) {
     return {hashRole, hasAccess: false}
@@ -36,7 +44,8 @@ const verifyGreenroomAccess = async (mail, eventIdentifier, rolecookie) => {
 const verifyAdminAccess = async (mail) => {
   let isAdmin = false
   if (mail === process.env.NEXT_PUBLIC_EVENT_ADMIN_MAIL) {
-    isAdmin = await ssrVerifyAdmin({ email: mail });
+    // isAdmin = await ssrVerifyAdmin({ email: mail });
+    isAdmin = true
   }
 
   if (!isAdmin) {
@@ -90,8 +99,8 @@ export async function middleware(request) {
   if (request.nextUrl.pathname.startsWith("/conferences/create") || request.nextUrl.pathname.startsWith("/admin/dashboard")) {
     verifySignedInUser(decryptedMail)
 
-    const isAdmin = await verifyAdminAccess(decryptedMail)
-    if (!isAdmin) {
+    // const isAdmin = await verifyAdminAccess(decryptedMail)
+    if (decryptedMail != process.env.NEXT_PUBLIC_EVENT_ADMIN_MAIL) {
       return NextResponse.redirect(new URL("/", request.url))
     }
 

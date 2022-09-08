@@ -1,12 +1,13 @@
 .home_bg {
   width: 100%;
-  height: 20rem;
+  height: 79vh;
   display: flex;
   background-size: cover;
 }
 
 .home_bg_content {
   display: flex;
+  padding: 35px;
   flex-direction: column;
   align-items: flex-start;
   background: linear-gradient(
@@ -47,6 +48,7 @@
 /* Event Show styles begins */
 .event_show_root {
   max-width: 900px;
+  /* min-width: 700px; */
   margin: 0em auto;
 }
 
@@ -150,6 +152,7 @@
 @media (min-width: 990px) {
   .event_show_root {
     margin: 1em auto;
+    min-width: none;
   }
   .speaker_intro {
     display: flex;

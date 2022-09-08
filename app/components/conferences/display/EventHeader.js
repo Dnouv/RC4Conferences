@@ -54,7 +54,7 @@ export const MdEventHeader = ({ event, error }) => {
   return (
     <div className={styles.event_banner}>
       <Container className={styles.event_custom_container}>
-        <Row style={{background: "url(https://github.com/RocketChat/Rocket.Chat.Demo.App/raw/master/rocketchat_gsoc2022_demoday.png)", backgroundSize: "67%"}}>
+        <Row style={{background: `url(${event.data.attributes["original-image-url"]})`, backgroundSize: "67%"}}>
           <Col fluid>
             {/* <Image src={event.data.attributes["original-image-url"]} fluid /> */}
           </Col>
