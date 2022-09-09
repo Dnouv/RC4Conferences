@@ -228,7 +228,7 @@ const SpeakerModal = (props) => {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Profile Pic URL</Form.Label>
+            <Form.Label>Profile URL</Form.Label>
             <Form.Control
               type="url"
               onChange={handleChange}
@@ -237,7 +237,7 @@ const SpeakerModal = (props) => {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>Contact Email</Form.Label>
             <Form.Control
               required
               onChange={handleChange}
@@ -247,7 +247,7 @@ const SpeakerModal = (props) => {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Short Biography</Form.Label>
+            <Form.Label>Short Info</Form.Label>
             <Form.Control
               required
               onChange={handleChange}
@@ -258,7 +258,7 @@ const SpeakerModal = (props) => {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Long Biography</Form.Label>
+            <Form.Label>Long Info</Form.Label>
             <Form.Control
               as="textarea"
               onChange={handleChange}
