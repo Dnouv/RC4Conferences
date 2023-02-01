@@ -17,6 +17,7 @@ Got questions? Or want to discuss any idea for the project, feel free to drop by
     - [Day of Event Page](#greenroom-and-mainstage-page)
 - [Production Deployment](#production-deployment)
 - [GS: Google Summer of Code 🌞](https://github.com/RocketChat/RC4Conferences/wiki/Google-Summer-of-Code)
+- [Component Deatils](https://github.com/RocketChat/RC4Conferences/wiki)
 
 
 # Installation
